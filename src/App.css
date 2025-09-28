@@ -433,3 +433,273 @@
     font-size: 3rem;
   }
 }
+/*
+ 新功能样式 */
+
+/* 时钟卡片 */
+.clock-display {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.time {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  margin-bottom: 10px;
+  font-family: 'Courier New', monospace;
+}
+
+.date {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+.weather-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.weather-temp {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.weather-condition {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* 待办事项卡片 */
+.todo-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todo-input-field {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.todo-input-field::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.todo-input-field:focus {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.add-btn {
+  min-width: 50px;
+  border-radius: 50%;
+  padding: 12px;
+}
+
+.todo-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.todo-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.todo-item.completed {
+  opacity: 0.6;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+}
+
+.todo-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.todo-text {
+  flex: 1;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: rgba(255, 0, 0, 0.2);
+}
+
+.empty-todos {
+  text-align: center;
+  opacity: 0.6;
+  font-style: italic;
+  padding: 20px;
+}
+
+/* 计算器卡片 */
+.toggle-calc-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.toggle-calc-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.calculator {
+  margin-top: 20px;
+}
+
+.calc-display {
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: 15px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-family: 'Courier New', monospace;
+}
+
+.calc-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.calc-btn {
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.calc-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.calc-operator {
+  background: rgba(255, 165, 0, 0.7) !important;
+}
+
+.calc-equals {
+  background: rgba(76, 175, 80, 0.7) !important;
+}
+
+/* 名言卡片 */
+.quote-content {
+  text-align: center;
+}
+
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  border-left: 4px solid rgba(255, 255, 255, 0.5);
+}
+
+/* 响应式设计更新 */
+@media (max-width: 768px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .time {
+    font-size: 2.5rem;
+  }
+  
+  .weather-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .calc-buttons {
+    gap: 8px;
+  }
+  
+  .calc-btn {
+    padding: 15px;
+    font-size: 1.1rem;
+  }
+  
+  .todo-input {
+    flex-direction: column;
+  }
+  
+  .add-btn {
+    border-radius: 25px;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .time {
+    font-size: 2rem;
+  }
+  
+  .calc-display {
+    font-size: 1.5rem;
+    padding: 15px;
+  }
+  
+  .quote-text {
+    font-size: 1.1rem;
+  }
+}
