@@ -49,7 +49,7 @@ function Navigation() {
       <nav className="navigation">
         <div className="nav-brand">
           <span className="nav-logo">⚛️</span>
-          <span className="nav-title">React App</span>
+          <span className="nav-title">React 多功能应用</span>
         </div>
 
         <div className="nav-content">
