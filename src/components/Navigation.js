@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import SearchModal from './SearchModal';
+import SettingsPanel from './SettingsPanel';
 import './Navigation.css';
 
 function Navigation() {
   const location = useLocation();
+  const [showSearch, setShowSearch] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
 
   const navItems = [
     { path: '/', label: '首页', icon: '🏠' },
@@ -14,27 +18,76 @@ function Navigation() {
     { path: '/about', label: '关于', icon: 'ℹ️' }
   ];
 
-  return (
-    <nav className="navigation">
-      <div className="nav-brand">
-        <span className="nav-logo">⚛️</span>
-        <span className="nav-title">React App</span>
-      </div>
+  // 键盘快捷键
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      // Ctrl/Cmd + K 打开搜索
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        setShowSearch(true);
+      }
+      // Ctrl/Cmd + , 打开设置
+      if ((e.ctrlKey || e.metaKey) && e.key === ',') {
+        e.preventDefault();
+        setShowSettings(true);
+      }
+    };
 
-      <ul className="nav-menu">
-        {navItems.map((item) => (
-          <li key={item.path} className="nav-item">
-            <Link
-              to={item.path}
-              className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  return (
+    <>
+      <nav className="navigation">
+        <div className="nav-brand">
+          <span className="nav-logo">⚛️</span>
+          <span className="nav-title">React App</span>
+        </div>
+
+        <div className="nav-content">
+          <ul className="nav-menu">
+            {navItems.map((item) => (
+              <li key={item.path} className="nav-item">
+                <Link
+                  to={item.path}
+                  className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
+                >
+                  <span className="nav-icon">{item.icon}</span>
+                  <span className="nav-label">{item.label}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <div className="nav-actions">
+            <button
+              className="nav-action-btn"
+              onClick={() => setShowSearch(true)}
+              title="搜索 (Ctrl+K)"
             >
-              <span className="nav-icon">{item.icon}</span>
-              <span className="nav-label">{item.label}</span>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
+              🔍
+            </button>
+            <button
+              className="nav-action-btn"
+              onClick={() => setShowSettings(true)}
+              title="设置 (Ctrl+,)"
+            >
+              ⚙️
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <SearchModal
+        isOpen={showSearch}
+        onClose={() => setShowSearch(false)}
+      />
+      <SettingsPanel
+        isOpen={showSettings}
+        onClose={() => setShowSettings(false)}
+      />
+    </>
   );
 }
 

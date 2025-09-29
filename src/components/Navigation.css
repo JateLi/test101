@@ -13,6 +13,12 @@
   align-items: center;
 }
 
+.nav-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
 .nav-brand {
   display: flex;
   align-items: center;
@@ -123,5 +129,52 @@
   
   .nav-icon {
     font-size: 1.5rem;
+  }
+}.
+nav-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav-action-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 10px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.nav-action-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  transform: scale(1.1);
+}
+
+.nav-action-btn:active {
+  transform: scale(0.95);
+}
+
+/* 响应式设计更新 */
+@media (max-width: 768px) {
+  .nav-content {
+    gap: 1rem;
+  }
+  
+  .nav-actions {
+    gap: 0.3rem;
+  }
+  
+  .nav-action-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
   }
 }

@@ -1,0 +1,370 @@
+.settings-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.settings-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 80vh;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  animation: slideIn 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.settings-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.settings-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.settings-close:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.settings-tabs {
+  display: flex;
+  background: rgba(0, 0, 0, 0.02);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 15px 20px;
+  border: none;
+  background: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.tab-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #333;
+}
+
+.tab-btn.active {
+  color: #4fc3f7;
+  border-bottom-color: #4fc3f7;
+  background: rgba(79, 195, 247, 0.1);
+}
+
+.settings-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 25px;
+}
+
+.settings-section {
+  color: #333;
+}
+
+.setting-group {
+  margin-bottom: 30px;
+}
+
+.setting-group h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+  color: #333;
+}
+
+.theme-selector {
+  display: flex;
+  gap: 10px;
+}
+
+.theme-btn {
+  flex: 1;
+  padding: 15px 20px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-btn:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.theme-btn.active {
+  border-color: #4fc3f7;
+  background: rgba(79, 195, 247, 0.1);
+  color: #4fc3f7;
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.color-option {
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.color-option:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.color-option.active {
+  border-color: #333;
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+}
+
+.setting-info h4 {
+  margin: 0 0 5px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.setting-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 26px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input:checked + .toggle-slider {
+  background-color: #4fc3f7;
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(24px);
+}
+
+.setting-actions {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.reset-btn {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.reset-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.5);
+}
+
+.about-info {
+  color: #333;
+}
+
+.app-info {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.app-info h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 5px 0;
+}
+
+.version {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.9rem;
+  margin: 0 0 15px 0;
+}
+
+.description {
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0;
+}
+
+.tech-info,
+.links-info {
+  margin-bottom: 25px;
+}
+
+.tech-info h4,
+.links-info h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+}
+
+.tech-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tech-info li {
+  padding: 8px 0;
+  color: rgba(0, 0, 0, 0.7);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.info-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #4fc3f7;
+  text-decoration: none;
+  padding: 8px 0;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.info-links a:hover {
+  color: #29b6f6;
+  transform: translateX(5px);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .settings-panel {
+    max-width: 95%;
+    max-height: 90vh;
+  }
+  
+  .settings-content {
+    padding: 20px;
+  }
+  
+  .color-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .theme-selector {
+    flex-direction: column;
+  }
+  
+  .setting-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
