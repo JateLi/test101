@@ -4,6 +4,7 @@ import './Gallery.css';
 function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [filter, setFilter] = useState('all');
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   // 模拟图片数据
   const images = [
@@ -25,6 +26,11 @@ function Gallery() {
   const openModal = (image) => {
     setSelectedImage(image);
   };
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => setImagesLoaded(true), 500);
+    return () => clearTimeout(timer);
+  }, []);
 
   const closeModal = () => {
     setSelectedImage(null);
