@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import SearchModal from './SearchModal';
 import SettingsPanel from './SettingsPanel';
+import DataExportPanel from './DataExportPanel';
 import './Navigation.css';
 
 function Navigation() {
   const location = useLocation();
   const [showSearch, setShowSearch] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
+  const [showExport, setShowExport] = useState(false);
 
   const navItems = [
     { path: '/', label: '首页', icon: '🏠' },
@@ -30,6 +32,11 @@ function Navigation() {
       if ((e.ctrlKey || e.metaKey) && e.key === ',') {
         e.preventDefault();
         setShowSettings(true);
+      }
+      // Ctrl/Cmd + E 打开数据导出
+      if ((e.ctrlKey || e.metaKey) && e.key === 'e') {
+        e.preventDefault();
+        setShowExport(true);
       }
     };
 
@@ -70,6 +77,13 @@ function Navigation() {
             </button>
             <button
               className="nav-action-btn"
+              onClick={() => setShowExport(true)}
+              title="数据导出 (Ctrl+E)"
+            >
+              📤
+            </button>
+            <button
+              className="nav-action-btn"
               onClick={() => setShowSettings(true)}
               title="设置 (Ctrl+,)"
             >
@@ -82,6 +96,10 @@ function Navigation() {
       <SearchModal
         isOpen={showSearch}
         onClose={() => setShowSearch(false)}
+      />
+      <DataExportPanel
+        isOpen={showExport}
+        onClose={() => setShowExport(false)}
       />
       <SettingsPanel
         isOpen={showSettings}
