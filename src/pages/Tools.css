@@ -1,0 +1,325 @@
+.tools-page {
+  padding-top: 100px;
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+.tools-header {
+  text-align: center;
+  padding: 40px 20px;
+  margin-bottom: 40px;
+}
+
+.tools-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #fff, #f0f8ff, #e6f3ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  margin-bottom: 15px;
+}
+
+.tools-header p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.tool-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tool-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.tool-header h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+  color: white;
+}
+
+.tool-content {
+  color: white;
+}
+
+/* 颜色选择器 */
+.color-input {
+  width: 100px;
+  height: 100px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.color-preview {
+  width: 100%;
+  height: 80px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.color-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* 文本分析器 */
+.text-analyzer {
+  width: 100%;
+  min-height: 150px;
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1rem;
+  resize: vertical;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+.text-analyzer::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.text-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.text-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* 随机生成器 */
+.random-generator {
+  text-align: center;
+}
+
+.range-inputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.range-inputs input {
+  width: 100px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  text-align: center;
+  outline: none;
+}
+
+.range-inputs span {
+  color: white;
+  font-weight: bold;
+}
+
+.random-result {
+  margin: 30px 0;
+}
+
+.random-number {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
+
+/* 单位转换器 */
+.unit-converter {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.converter-input,
+.converter-output {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.converter-input input,
+.converter-output input {
+  width: 150px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  text-align: center;
+  outline: none;
+}
+
+.converter-input select,
+.converter-output select {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  outline: none;
+  cursor: pointer;
+}
+
+.converter-arrow {
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+}
+
+/* 按钮样式 */
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  color: white;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+
+.btn-secondary {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.btn-accent {
+  background: linear-gradient(45deg, #4fc3f7, #29b6f6);
+  color: white;
+  box-shadow: 0 4px 15px rgba(79, 195, 247, 0.4);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .tools-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 10px;
+  }
+  
+  .tool-card {
+    padding: 30px 20px;
+  }
+  
+  .tools-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .text-actions {
+    flex-direction: column;
+  }
+  
+  .range-inputs {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .converter-input,
+  .converter-output {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .converter-arrow {
+    transform: rotate(90deg);
+  }
+  
+  .random-number {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tools-header h1 {
+    font-size: 2rem;
+  }
+  
+  .tool-card {
+    padding: 20px 15px;
+  }
+  
+  .random-number {
+    font-size: 2.5rem;
+  }
+  
+  .text-stats {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
