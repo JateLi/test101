@@ -54,8 +54,11 @@ function Dashboard() {
         setCalcDisplay(result.toString());
         setCalcInput(result.toString());
       } catch (error) {
-        setCalcDisplay('错误');
+        setCalcDisplay('计算错误');
         setCalcInput('');
+        setTimeout(() => {
+          setCalcDisplay('0');
+        }, 1500);
       }
     } else if (value === 'C') {
       setCalcDisplay('0');
