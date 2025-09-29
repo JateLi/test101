@@ -34,7 +34,8 @@ function Games() {
     setAttempts(newAttempts);
 
     if (num === targetNumber) {
-      setMessage(`🎉 恭喜！你用${newAttempts}次猜中了数字${targetNumber}！`);
+      const performance = newAttempts <= 5 ? '🏆 优秀' : newAttempts <= 10 ? '👍 不错' : '💪 继续努力';
+      setMessage(`🎉 恭喜！你用${newAttempts}次猜中了数字${targetNumber}！${performance}`);
       setGameWon(true);
     } else if (num < targetNumber) {
       setMessage(`太小了！再试试更大的数字。(第${newAttempts}次尝试)`);
