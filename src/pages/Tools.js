@@ -46,7 +46,7 @@ function Tools() {
               onClick={() => copyToClipboard(colorPicker)}
               className="btn btn-primary"
             >
-              复制颜色值
+              📋 复制颜色值
             </button>
           </div>
         </div>
