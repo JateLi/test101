@@ -8,6 +8,7 @@ import Games from './pages/Games';
 import Tools from './pages/Tools';
 import Gallery from './pages/Gallery';
 import About from './pages/About';
+import NotFound from './pages/NotFound';
 import './App.css';
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
               <Route path="/tools" element={<Tools />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/about" element={<About />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
         </div>
