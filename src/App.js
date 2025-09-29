@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
 import ErrorBoundary from './components/ErrorBoundary';
 import Navigation from './components/Navigation';
+import KeyboardShortcuts from './components/KeyboardShortcuts';
+import { useKeyboardNavigation } from './hooks/useKeyboardNavigation';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Games from './pages/Games';
@@ -13,6 +15,8 @@ import NotFound from './pages/NotFound';
 import './App.css';
 
 function App() {
+  useKeyboardNavigation();
+
   return (
     <ThemeProvider>
       <ErrorBoundary>
@@ -29,6 +33,7 @@ function App() {
             </div>
 
             <Navigation />
+            <KeyboardShortcuts />
 
             <main className="main-content">
               <Routes>
